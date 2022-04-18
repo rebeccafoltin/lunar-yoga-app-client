@@ -3,11 +3,8 @@
 # Lunar Yoga
 The Yoga tradition is full of moon lore. Hatha Yoga, which strives to balance the polar energies within us all, translates in the Sanskrit language to Moon / Sun. Lunar Yoga is a wellness app that allows users to sync their yoga practice with natural celestial cycles.
 
-
 # Wireflow
 [Lunar-Yoga-Wireflow.pdf](https://github.com/rebeccafoltin/lunar-yoga-app-client/files/8508301/Lunar-Yoga-Wireflow.pdf)
-
-https://www.dropbox.com/s/oh0ceokx214myuc/Lunar-Yoga-Wireflow.pdf?dl=0
 
 ## [License](LICENSE)
 
