@@ -1,17 +1,69 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+
+      <title>Lunar Yoga</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="app/app.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="app/config.js" type="text/javascript" charset="utf-8" defer></script>
+
     </head>
+
     <body>
-      <h1>Browser Template</h1>
+
+
+      <h1>Lunar Yoga </h1>
+      <h2> Breathe Deep and set your Intention.</h2>
+            <img src="https://uc4df84ea4f1007c07accd4ab72f.dl.dropboxusercontent.com/cd/0/inline/Bjov-x7travPkSChY2-dKbPgbFlBhSEDAhN_PK6S0WLCGiCHukJ04h_9bJR_LlIMpliPz0W9d0nJBAvZxDgorywYuZhBU6KiEsP5VnJLPZYxjTfiVZ8oMV5hVyqkH_hrnQsyC-ZxUJ4Vc8N6ySHJZIGo3lnel2LSE-Cg9DROBe59Kg/file#" width="400" height="400">
+
+      <div id="home-page">
+
+        <div id="sign-up">
+        <h3>Sign Up</h3>
+          <form id="sign-up-form">
+            <input name="credentials[email]" type="email" placeholder="Enter your email" required> <br>
+            <input name="credentials[password]" type="password" placeholder="Enter a password" required> <br>
+            <input name="credentials[password_confirmation]" type="password" placeholder="Enter password again" required> <br>
+            <button type="submit">Sign Up</button> <br>
+          </form>
+        </div>
+
+        <div id="sign-in">
+        <h3>Sign In</h3>
+          <form id="sign-in-form">
+            <input name="credentials[email]" type="email" placeholder="email" required> <br>
+            <input name="credentials[password]" type="password" placeholder="password" required> <br>
+            <button type="submit">Sign In</button> <br>
+          </form>
+        </div>
+
+      <form id="yoga-create" class="border">
+        <fieldset>
+          <legend>Log your Yoga</legend>
+          <input type="Style" name="yoga[style]" placeholder="Enter Yoga Style">
+          <input type="Date" name="yoga[date]" placeholder="Enter Yoga Date">
+          <input type="Emotion" name="yoga[Emotion]" placeholder="Enter Today's Emotion">
+          <input type="Location" name="yoga[location]" placeholder="Where are you located?">
+          <input type="submit" value="Create Yoga Inventory">
+        </fieldset>
+      </form>
+
+        <section id="home-page-auth"></section>
+      </div> 
+
     </body>
-</html>
+
+
+
+              <!-- <form id="change-password" class="border">
+        <fieldset>
+          <legend>Change Password!</legend>
+          <input type="password" name="passwords[old]" placeholder="Old Password">
+          <input type="password" name="passwords[new]" placeholder="New Password">
+          <input type="submit" value="Change Password!">
+        </fieldset>
+      </form>
+     -->
