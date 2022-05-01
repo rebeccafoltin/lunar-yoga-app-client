@@ -9,41 +9,43 @@
 
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer> </script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer> </script>
-<!--       
-      <script src="app/app.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="app/config.js" type="text/javascript" charset="utf-8" defer></script> -->
 
     </head>
-
     <body>
-
 
       <h1>Lunar Yoga </h1>
       <h2> Breathe Deep and set your Intention.</h2>
-            <img src="https://www.dropbox.com/s/o03epaxdtoj616p/1000_F_142393904_t6fjoz0QevOX64FWbaFQepMzw0ea6fQq.jpg?dl=0" width="400" height="400">
+      
+      <h3>Sign Up</h3>
+      <form id="sign-up-form">
+        <input name="credentials[email]" type="email" placeholder="Email">
+        <input name="credentials[password]" type="password" placeholder="Enter password">
+        <input name="credentials[password_confirmation]" type="password" placeholder="Enter password again">
+        <button type="submit">Sign Up</button>
+      </form>
 
-      <div id="home-page">
+      <h3>Sign In</h3>
+      <form id="sign-in-form">
+        <input name="credentials[email]" type="email" placeholder="Email">
+        <input name="credentials[password]" type="password" placeholder="Enter password">
+        <button type="submit">Sign In</button>
+      </form>
 
-        <div id="sign-up">
-        <h3>Sign Up</h3>
-          <form id="sign-up-form">
-            <input name="credentials[email]" type="email" placeholder="Enter your email" required> <br>
-            <input name="credentials[password]" type="password" placeholder="Enter a password" required> <br>
-            <input name="credentials[password_confirmation]" type="password" placeholder="Enter password again" required> <br>
-            <button type="submit">Sign Up</button> <br>
-          </form>
-        </div>
+      <h3>Change Password</h3>
+      <form id="change-password-form">
+        <input name="passwords[old]" type="password" placeholder="Enter old password">
+        <input name="passwords[new]" type="password" placeholder="Enter new password">
+        <button type="submit">Change Password</button>
+      </form>
 
-        <div id="sign-in">
-        <h3>Sign In</h3>
-          <form id="sign-in-form">
-            <input name="credentials[email]" type="email" placeholder="email" required> <br>
-            <input name="credentials[password]" type="password" placeholder="password" required> <br>
-            <button type="submit">Sign In</button> <br>
-          </form>
-        </div>
+      <h3>Sign Out</h3>
+      <button id="sign-out-button">Sign Out</button>
 
-      <form id="yoga-create" class="border">
+      <section id="auth-display"></section>
+    </body>
+</html>
+
+      <!-- <form id="yoga-create" class="border">
         <fieldset>
           <legend>Log your Yoga</legend>
           <input type="Style" name="yoga[style]" placeholder="Enter Yoga Style">
@@ -56,17 +58,3 @@
 
         <section id="home-page-auth"></section>
       </div> 
-
-    </body>
-
-
-
-              <!-- <form id="change-password" class="border">
-        <fieldset>
-          <legend>Change Password!</legend>
-          <input type="password" name="passwords[old]" placeholder="Old Password">
-          <input type="password" name="passwords[new]" placeholder="New Password">
-          <input type="submit" value="Change Password!">
-        </fieldset>
-      </form>
-     -->
