@@ -8,14 +8,9 @@ const Events = require('./auth/events.js')
 
 
 $(() => {
-  $('#sign-up-form').on('submit', Events.onSignUp)
-  $('#sign-in-form').on('submit', events.onSignIn)
-  $('#change-password').on('submit', events.onChangePw)
-  $('#sign-out-button').on('click', events.onSignOut)
-  $('#sign-up-form').show()
-  $('#sign-in-form').show()
-  $('#change-password').hide()
-  $('#sign-in-form').hide()
-
-  // $('#view-workout-history').on('click', events.onClick)
+    // attach event listeners
+    $('#sign-up-form').on('submit', Events.onSignUp)
+    $('#sign-in-form').on('submit', Events.onSignIn)
+    $('#change-password-form').on('submit', Events.onChangePassword)
+    $('#sign-out-button').on('click', Events.onSignOut)
 })
