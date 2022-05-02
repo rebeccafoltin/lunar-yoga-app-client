@@ -1,6 +1,8 @@
+#!/bin/bash
+
 # VARIABLE=VALUE sh curl-scripts/auth/sign-up.sh
 
-API="http://localhost:4741"
+API="http://localhost:4741/"
 URL_PATH="/sign-up"
 
 curl "${API}${URL_PATH}" \

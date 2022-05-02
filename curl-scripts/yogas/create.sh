@@ -1,12 +1,12 @@
 # # # Ex: TOKEN=tokengoeshere TITLE=titlegoeshere DIRECTOR=joeshmoe sh curl-scripts/movies/create.sh
 
-TOKEN=""
-NAME=""
-STYLE=""
-EMOTION=""
-DATE=""
+# TOKEN=""
+# NAME=""
+# STYLE=""
+# EMOTION=""
+# DATE=""
 
-API="http://localhost:4741"
+API="http://localhost:4741/"
 URL_PATH="/yogas"
 
 curl "${API}${URL_PATH}" \
