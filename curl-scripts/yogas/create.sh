@@ -1,12 +1,12 @@
 # # # Ex: TOKEN=tokengoeshere TITLE=titlegoeshere DIRECTOR=joeshmoe sh curl-scripts/movies/create.sh
-# TOKEN=""
-# NAME=""
-# STYLE=""
-# EMOTION=""
-# DATE=""
+TOKEN=""
+NAME=""
+STYLE=""
+EMOTION=""
+DATE=""
 
 API="http://localhost:4741"
-URL_PATH="/treatments"
+URL_PATH="/yogas"
 
 curl "${API}${URL_PATH}" \
   --include \
@@ -14,14 +14,12 @@ curl "${API}${URL_PATH}" \
   --header "Content-Type: application/json" \
   --header "Authorization: Bearer ${TOKEN}" \
   --data '{
-    "treatment": {
-      "name": "'"${NAME}"'",
-      "tooth": "'"${TOOTH}"'",
-       "radiographs": "'"${RADIOGRAPHS}"'",
-      "date": "'"${DATE}"'"
+    "yogaName": "'"${yogaName}"'",
+      "yogaStyle": "'"${yogaStyle}"'",
+      "yogaEmotion": "'"${yogaEmotion}"'"
     }
   }'
-
+  
 echo
 # curl "https://library-express-api.herokuapp.com/movies" \
 #   --include \
