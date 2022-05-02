@@ -6,8 +6,4 @@ The Yoga tradition is full of moon lore. Hatha Yoga, which strives to balance th
 # Wireflow
 [Lunar-Yoga-Wireflow.pdf](https://github.com/rebeccafoltin/lunar-yoga-app-client/files/8508301/Lunar-Yoga-Wireflow.pdf)
 
-## [License](LICENSE)
-
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+# Deployed Application: 
