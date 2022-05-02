@@ -6,7 +6,6 @@ const Events = require('./auth/events.js')
 
 // event handlers 
 
-
 $(() => {
     // attach event listeners
     $('#sign-up-form').on('submit', Events.onSignUp)
