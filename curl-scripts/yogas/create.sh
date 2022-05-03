@@ -1,6 +1,7 @@
-# # # Ex: TOKEN=tokengoeshere TITLE=titlegoeshere DIRECTOR=joeshmoe sh curl-scripts/movies/create.sh
+# # # Ex: =tokengoeshere TITLE=titlegoeshere DIRECTOR=joeshmoe sh curl-scripts/movies/create.sh
 
-TOKEN="1b226c86d26a6544f0fb7af289e777ab"
+TOKEN="e7743b1050bbdc3c36756aba9ebc74c0"
+
 NAME="rebecca"
 STYLE="restorative"
 EMOTION="neutral"

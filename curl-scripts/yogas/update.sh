@@ -1,12 +1,9 @@
 # # Ex: TOKEN=tokengoeshere ID=idgoeshere TITLE=titlegoeshere DIRECTOR=joeshmoe sh curl-scripts/movies/update.sh
 
-# TOKEN=""
-# NAME=""
-# STYLE=""
-# EMOTION=""
-# DATE=""
+TOKEN="e7743b1050bbdc3c36756aba9ebc74c0"
 
 API="http://localhost:4741"
+
 URL_PATH="/yogas"
 
 curl "${API}${URL_PATH}/${ID}" \

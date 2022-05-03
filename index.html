@@ -19,24 +19,24 @@
       <h3 id="sign-up-header">Sign Up</h3>
       <form id="sign-up-form">
         <input name="credentials[email]" type="email" placeholder="Email">
-        <input name="credentials[password]" type="password" placeholder="Enter password">
-        <input name="credentials[firstname]" type="text" placeholder="firstname">
-        <input name="credentials[lastname]" type="text" placeholder="lastname">
-        <input name="credentials[password_confirmation]" type="password" placeholder="Enter password again">
+        <input name="credentials[password]" type="password" placeholder="Password">
+        <input name="credentials[firstname]" type="text" placeholder="First Name">
+        <input name="credentials[lastname]" type="text" placeholder="Last Name">
+        <input name="credentials[password_confirmation]" type="password" placeholder="Password Confirmation">
         <button type="submit">Sign Up</button>
       </form>
 
       <h3 id="sign-in-header">Sign In</h3>
       <form id="sign-in-form">
         <input name="credentials[email]" type="email" placeholder="Email">
-        <input name="credentials[password]" type="password" placeholder="Enter password">
+        <input name="credentials[password]" type="password" placeholder="Password">
         <button type="submit">Sign In</button>
       </form>
 
       <h3>Change Password</h3>
       <form id="change-password-form">
-        <input name="passwords[old]" type="password" placeholder="Enter old password">
-        <input name="passwords[new]" type="password" placeholder="Enter new password">
+        <input name="passwords[old]" type="password" placeholder="old password">
+        <input name="passwords[new]" type="password" placeholder="new password">
         <button type="submit">Change Password</button>
       </form>
 
@@ -48,32 +48,38 @@
         <form id="yoga-create" class="border">
         <fieldset>
           <legend>Log your Yoga</legend>
-          <input type="text" name="yoga[yogaStyle]" placeholder="Enter Yoga Style">
-          <input type="text" name="yoga[yogaDate]" placeholder="Enter Yoga Date">
-          <input type="text" name="yoga[yogaEmotion]" placeholder="Enter Today's Emotion">
-          <input type="text" name="yoga[yogaName]" placeholder="Enter Yoga name">
+          <input type="text" name="yoga[yogaStyle]" placeholder="Yoga Style">
+          <input type="text" name="yoga[yogaDate]" placeholder="Yoga Date">
+          <input type="text" name="yoga[yogaEmotion]" placeholder="Today's Emotions">
+          <input type="text" name="yoga[yogaName]" placeholder="Today's Practice">
           <input type="submit" value="Create Yoga Inventory">
         </fieldset>
       </form>
 
+      <!--INDEX YOGAS-->
       <section id="yoga-index">
-        <button id="index" class="border"> Index
+        <button id="index" class="border"> View all
         </button>  
       </section>
 
-      <section id="yoga-update">
-        <button id="update" class="border"> Update
+      <!-- UPDATE YOGAS -->
+      <section id="UPDATE">
+        <form id="yoga-update">
+          <button id="update" class="crud"> Update Yogas
         </button>  
       </section>
 
-      <section id="yoga-show">
-        <button id="show" class="border"> Show
-        </button>  
+      <!-- FIND YOGAS BY ID -->
+      <section id="SHOW">
+        <form id="yoga-show">
+          <input name="yoga[id]" type="text" class="crud" placeholder="search by id"> Reflect on a specific yoga memory.
+          </form>
       </section>
 
-      <section id="yoga-destroy">
-        <button id="destroy" class="border"> Delete
-        </button>  
+      <!-- DELETE YOGAS -->
+    <section id="DELETE">
+      <form id="yoga-destroy"> 
+        <input type="submit"> Destroy what does not serve you, and move on.</form>
       </section>
 
     </body>

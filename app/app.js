@@ -15,6 +15,6 @@ $(() => {
     $('#yoga-create').on('submit', Events.onYogaCreate)
     $('#yoga-destroy').on('submit', Events.onYogaDestroy)
     $('#yoga-index').on('click', Events.onYogaIndex)
-    $('#yoga-show').on('submit', Events.onYogaShow)
-    $('#yoga-update').on('submit', Events.onYogaUpdate)
+    $('#yoga-show').on('click', Events.onYogaShow)
+    $('#yoga-update').on('click', Events.onYogaUpdate)
 })

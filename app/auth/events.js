@@ -63,8 +63,8 @@ const onYogaCreate = function (event) {
 
 const onYogaDestroy = function (event) {
     event.preventDefault()
-    // const form = event.target
-    const id = getFormFields(event.target).game.id
+    const form = event.target
+    const id = getFormFields(event.target).yoga.id
     authApi
         .yogaDestroy(id)
         .then((response) => authUi.onYogaDestroySuccess(response))
