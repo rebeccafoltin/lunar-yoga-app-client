@@ -2,11 +2,8 @@
 
 #!/bin/bash
 
-# TOKEN=""
-# NAME=""
-# STYLE=""
-# EMOTION=""
-# DATE=""
+TOKEN="1b226c86d26a6544f0fb7af289e777ab"
+ID=""
 
 
 API="http://localhost:4741/"

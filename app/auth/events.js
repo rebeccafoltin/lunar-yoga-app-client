@@ -17,11 +17,10 @@ const onSignUp = function (event) {
     const data = getFormFields(form)
     authApi
         .signUp(data)
-        .then(() => authUi.onSignUpSuccess)
+        .then(() => authUi.onSignUpSuccess())
         .catch(() => authUi.onSignUpFailure())
     console.log(authApi.signUp)
 }
-authUi.onSignUpSuccess()
 
 const onSignIn = function (event) {
     event.preventDefault()
@@ -31,11 +30,11 @@ const onSignIn = function (event) {
     const data = getFormFields(form)
     authApi
         .signIn(data)
-        .then(() => authUi.onSignInSuccess)
+        .then((response) => authUi.onSignInSuccess(response))
+        // response bc token
         .catch(() => authUi.onSignInFailure())
     console.log(authApi.signIn)
 }
-authUi.onSignInSuccess()
 
 const onChangePassword = function (event) {
     event.preventDefault()
@@ -49,7 +48,6 @@ const onChangePassword = function (event) {
         .catch(() => authUi.onChangePasswordFailure())
     console.log(authApi.changePassword)
 }
-authUi.onChangePasswordSuccess()
 
 const onSignOut = function (event) {
     event.preventDefault()
@@ -63,7 +61,6 @@ const onSignOut = function (event) {
         .catch(() => authUi.onSignOutFailure())
     console.log(authApi.signOut)
 }
-authUi.onSignOutSuccess()
 
 module.exports = {
     onSignUp,

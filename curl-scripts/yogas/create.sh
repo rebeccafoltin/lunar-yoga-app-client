@@ -1,23 +1,24 @@
 # # # Ex: TOKEN=tokengoeshere TITLE=titlegoeshere DIRECTOR=joeshmoe sh curl-scripts/movies/create.sh
 
-# TOKEN=""
-# NAME=""
-# STYLE=""
-# EMOTION=""
-# DATE=""
+TOKEN="1b226c86d26a6544f0fb7af289e777ab"
+NAME="rebecca"
+STYLE="restorative"
+EMOTION="sad"
+DATE="may 2"
 
-API="http://localhost:4741/"
+API="http://localhost:4741"
 URL_PATH="/yogas"
 
 curl "${API}${URL_PATH}" \
   --include \
   --request POST \
-  --header "Content-Type: application/json" 
-  --header "Authorization: Bearer ${TOKEN}" 
+  --header "Content-Type: application/json" \
+  --header "Authorization: Bearer ${TOKEN}" \
   --data '{
-    "yogaName": "'"${yogaName}"'",
-      "yogaStyle": "'"${yogaStyle}"'",
-      "yogaEmotion": "'"${yogaEmotion}"'"
+    yoga:{
+    "yogaName": "'"${NAME}"'",
+      "yogaStyle": "'"${STYLE}"'",
+      "yogaEmotion": "'"${EMOTION}"'"
     }
   }'
   
