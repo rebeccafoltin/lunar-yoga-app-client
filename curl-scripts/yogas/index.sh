@@ -1,12 +1,8 @@
 # # Ex: TOKEN=tokengoeshere sh curl-scripts/movies/index.sh
 
-# TOKEN=""
-# NAME=""
-# STYLE=""
-# EMOTION=""
-# DATE=""
+TOKEN="57caee8b3bfe0a385ed9c71e89d5ee9e"
 
-API="http://localhost:4741/"
+API="http://localhost:4741"
 URL_PATH="/yogas"
 
 curl "${API}${URL_PATH}" \
@@ -14,12 +10,6 @@ curl "${API}${URL_PATH}" \
   --request GET \
     --header "Content-Type: application/json" \
   --header "Authorization: Bearer ${TOKEN}"
-  --data '{
-    "yogaName": "'"${yogaName}"'",
-      "yogaStyle": "'"${yogaStyle}"'",
-      "yogaEmotion": "'"${yogaEmotion}"'"
-    }
-  }'
 echo
 
 
@@ -30,4 +20,4 @@ echo
 #   --header "Content-Type: application/json" \
 #   --header "Authorization: Bearer ${TOKEN}" \
 
-# echo
+# echo[](../../lib/get-form-fields.js)

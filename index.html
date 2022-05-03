@@ -20,6 +20,8 @@
       <form id="sign-up-form">
         <input name="credentials[email]" type="email" placeholder="Email">
         <input name="credentials[password]" type="password" placeholder="Enter password">
+        <input name="credentials[firstname]" type="text" placeholder="firstname">
+        <input name="credentials[lastname]" type="text" placeholder="lastname">
         <input name="credentials[password_confirmation]" type="password" placeholder="Enter password again">
         <button type="submit">Sign Up</button>
       </form>
@@ -42,19 +44,38 @@
       <button id="sign-out-button">Sign Out</button>
 
       <section id="auth-display"></section>
-    </body>
-</html>
 
-      <!-- <form id="yoga-create" class="border">
+        <form id="yoga-create" class="border">
         <fieldset>
           <legend>Log your Yoga</legend>
-          <input type="Style" name="yoga[style]" placeholder="Enter Yoga Style">
-          <input type="Date" name="yoga[date]" placeholder="Enter Yoga Date">
-          <input type="Emotion" name="yoga[Emotion]" placeholder="Enter Today's Emotion">
-          <input type="Location" name="yoga[location]" placeholder="Where are you located?">
+          <input type="text" name="yoga[yogaStyle]" placeholder="Enter Yoga Style">
+          <input type="text" name="yoga[yogaDate]" placeholder="Enter Yoga Date">
+          <input type="text" name="yoga[yogaEmotion]" placeholder="Enter Today's Emotion">
+          <input type="text" name="yoga[yogaName]" placeholder="Enter Yoga name">
           <input type="submit" value="Create Yoga Inventory">
         </fieldset>
       </form>
 
-        <section id="home-page-auth"></section>
-      </div> 
+      <section id="yoga-index">
+        <button id="index" class="border"> Index
+        </button>  
+      </section>
+
+      <section id="yoga-update">
+        <button id="update" class="border"> Update
+        </button>  
+      </section>
+
+      <section id="yoga-show">
+        <button id="show" class="border"> Show
+        </button>  
+      </section>
+
+      <section id="yoga-destroy">
+        <button id="destroy" class="border"> Delete
+        </button>  
+      </section>
+
+    </body>
+</html>
+

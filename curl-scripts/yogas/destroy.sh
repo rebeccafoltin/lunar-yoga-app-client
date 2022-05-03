@@ -2,11 +2,10 @@
 
 #!/bin/bash
 
-TOKEN="1b226c86d26a6544f0fb7af289e777ab"
-ID=""
+TOKEN="4d15a4b3f0a7bf87238ba866bde1e5be"
+ID="62706e1c4a4662016cf3946a"
 
-
-API="http://localhost:4741/"
+API="http://localhost:4741"
 URL_PATH="/yogas"
 
 curl "${API}${URL_PATH}/${ID}" \

@@ -6,7 +6,7 @@
 # EMOTION=""
 # DATE=""
 
-API="http://localhost:4741/"
+API="http://localhost:4741"
 URL_PATH="/yogas"
 
 curl "${API}${URL_PATH}/${ID}" \

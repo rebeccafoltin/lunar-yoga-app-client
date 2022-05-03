@@ -1,18 +1,18 @@
 'use strict'
 
-// actual event functions 
+// define event handlers functions 
 // begin promise chain
-
-const getFormFields = require('../../lib/get-form-fields.js')
+// get form data
+// events.js requires api.js and ui.js
+// const store = require('./store.js')
 
 const authApi = require('./api.js')
 const authUi = require('./ui.js')
+const getFormFields = require('../../lib/get-form-fields.js')
 
 
 const onSignUp = function (event) {
     event.preventDefault()
-    console.log(event)
-    // get form data
     const form = event.target
     const data = getFormFields(form)
     authApi
@@ -24,8 +24,6 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
     event.preventDefault()
-    console.log(event)
-    // get form data
     const form = event.target
     const data = getFormFields(form)
     authApi
@@ -33,38 +31,85 @@ const onSignIn = function (event) {
         .then((response) => authUi.onSignInSuccess(response))
         // response bc token
         .catch(() => authUi.onSignInFailure())
-    console.log(authApi.signIn)
 }
 
 const onChangePassword = function (event) {
     event.preventDefault()
-    console.log(event)
-    // get form data
     const form = event.target
     const data = getFormFields(form)
     authApi
         .changePassword(data)
-        .then(() => authUi.onChangePasswordSuccess)
+        .then(() => authUi.onChangePasswordSuccess())
         .catch(() => authUi.onChangePasswordFailure())
-    console.log(authApi.changePassword)
 }
 
 const onSignOut = function (event) {
     event.preventDefault()
-    console.log(event)
-    // get form data
+    authApi
+        .signOut()
+        .then(() => authUi.onSignOutSuccess())
+        .catch(() => authUi.onSignOutFailure())
+}
+
+const onYogaCreate = function (event) {
+    event.preventDefault()
     const form = event.target
     const data = getFormFields(form)
     authApi
-        .signOut(data)
-        .then(() => authUi.onSignOutSuccess)
-        .catch(() => authUi.onSignOutFailure())
-    console.log(authApi.signOut)
+        .yogaCreate(data)
+        .then(() => authUi.onYogaCreateSuccess())
+        .catch(() => authUi.onYogaCreateFailure())
 }
+
+const onYogaDestroy = function (event) {
+    event.preventDefault()
+    // const form = event.target
+    const id = getFormFields(event.target).game.id
+    authApi
+        .yogaDestroy(id)
+        .then((response) => authUi.onYogaDestroySuccess(response))
+        .catch(() => authUi.onYogaDestroyFailure())
+}
+
+const onYogaIndex = function (event) {
+    event.preventDefault()
+    authApi
+        .yogaIndex()
+        .then((response) => authUi.onYogaIndexSuccess(response))
+        .catch(() => authUi.onYogaIndexFailure())
+}
+
+const onYogaShow = function (event) {
+    event.preventDefault()
+    const form = event.target
+    const data = getFormFields(form)
+    authApi
+        .yogaShow(data)
+        .then(() => authUi.onYogaShowSuccess())
+        .catch(() => authUi.onYogaShowFailure())
+    console.log(authApi.yogaShow)
+}
+
+const onYogaUpdate = function (event) {
+    event.preventDefault()
+    const form = event.target
+    const data = getFormFields(form)
+    authApi
+        .yogaUpdate(data)
+        .then(() => authUi.onYogaUpdateSuccess())
+        .catch(() => authUi.onYogaUpdateFailure())
+    console.log(authApi.yogaUpdate)
+}
+
 
 module.exports = {
     onSignUp,
     onSignIn,
     onChangePassword,
     onSignOut,
+    onYogaCreate,
+    onYogaDestroy,
+    onYogaIndex,
+    onYogaShow,
+    onYogaUpdate
 }

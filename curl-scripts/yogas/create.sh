@@ -3,8 +3,8 @@
 TOKEN="1b226c86d26a6544f0fb7af289e777ab"
 NAME="rebecca"
 STYLE="restorative"
-EMOTION="sad"
-DATE="may 2"
+EMOTION="neutral"
+DATE="5/1/22"
 
 API="http://localhost:4741"
 URL_PATH="/yogas"

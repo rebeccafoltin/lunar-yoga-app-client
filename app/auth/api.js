@@ -1,4 +1,6 @@
 // ajax scripts and functions here
+// functions that make requests to the API
+// requires store.js
 
 const store = require('../store.js')
 const config = require('../config.js')
@@ -41,9 +43,66 @@ const signOut = function() {
     })
 }
 
+const yogaCreate = function (formData) {
+    return $.ajax({
+        method: 'POST',
+        url: config.apiUrl + '/yogas',
+        data: formData,
+        headers: {
+            Authorization: 'Bearer ' + store.user.token
+        }
+    })
+    
+}
+
+const yogaDestroy = function (id) {
+    return $.ajax({
+        method: 'DELETE',
+        url: config.apiUrl + '/yogas' + id,
+        headers: {
+            Authorization: 'Bearer ' + store.user.token
+        }
+    })
+}
+
+const yogaIndex = function() {
+    return $.ajax({
+        method: 'GET',
+        url: config.apiUrl + '/yogas',
+        headers: {
+            Authorization: 'Bearer ' + store.user.token
+        }
+    })
+}
+
+const yogaShow = function() {
+    return $.ajax({
+        method: 'GET',
+        url: config.apiUrl + '/yogas',
+        headers: {
+            Authorization: 'Bearer ' + store.user.token
+        }
+    })
+}
+
+const yogaUpdate = function() {
+    return $.ajax({
+        method: 'PATCH',
+        url: config.apiUrl + '/yogas',
+        headers: {
+            Authorization: 'Bearer ' + store.user.token
+        }
+    })
+}
+
 module.exports = {
     signUp,
     signIn,
     changePassword,
-    signOut
+    signOut,
+    yogaCreate,
+    yogaDestroy,
+    yogaIndex,
+    yogaShow,
+    yogaUpdate
 }
