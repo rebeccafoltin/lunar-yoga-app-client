@@ -18,9 +18,14 @@
       <h2> Breathe Deep and set your Intention.</h2>
 
 
+<!-- Auth Display-->
+<section id="auth-display">
+</section>
+
+
   <!-- Sign Up -->
-      <h3 id="sign-up-header">Sign Up</h3>
-      <section class="not-signed-in"></section>
+      <section class="not-signed-in">
+        <h3 id="sign-up-header">Sign Up</h3>
         <form id="sign-up-form">
           <input name="credentials[email]" type="email" placeholder="Email">
           <input name="credentials[password]" type="password" placeholder="Password">
@@ -29,34 +34,38 @@
           <input name="credentials[password_confirmation]" type="password" placeholder="Password Confirmation">
           <button type="submit">Sign Up</button>
         </form>
+      </section>
 
   <!-- Sign In -->
-      <h3 id="sign-in-header">Sign In</h3>
-      <section class="not-signed-in"></section>
+      <section class="not-signed-in">
+        <h3 id="sign-in-header">Sign In</h3>
         <form id="sign-in-form">
           <input name="credentials[email]" type="email" placeholder="Email">
           <input name="credentials[password]" type="password" placeholder="Password">
           <button type="submit">Sign In</button>
         </form>
+      </section>
 
   <!-- Change Password -->
-      <h3>Change Password</h3>
-      <section class="signed-in"></section>
+      <section class="signed-in">
+        <h3>Change Password</h3>
         <form id="change-password-form">
           <input name="passwords[old]" type="password" placeholder="old password">
           <input name="passwords[new]" type="password" placeholder="new password">
           <button type="submit">Change Password</button>
         </form>
+      </section>
 
   <!-- Sign Out -->
-      <h3>Sign Out</h3>
-      <section class="signed-in"></section>
+      <section class="signed-in">
+        <h3>Sign Out</h3>
       <button id="sign-out-button">Sign Out</button>
+    </section>
 
   <!-- C R U D  T I M E -->
 
   <!--CREATE Yogas -->
-        <form id="yoga-create" class="crud">
+        <form id="yoga-create" class="signed-in">
         <fieldset>
           <legend>Log your Yoga</legend>
           <input type="text" name="yoga[yogaStyle]" placeholder="Yoga Style">
@@ -68,7 +77,7 @@
       </form>
 
   <!--UPDATE Yogas-->
-          <form id="yoga-update" class="crud">
+          <form id="yoga-update" class="signed-in">
             <fieldset>
               <legend> Update Yoga</legend>
               <input type="text" name="yoga[yogaStyle]" placeholder="Yoga Style">
@@ -81,23 +90,18 @@
             </form>
       
       <!--INDEX Yogas-->
-      <section id="yoga-index">
-        <section id="yoga-box"></section>
-        <button id="index" class="crud"> View all
+      <section id="yoga-index" class="signed-in">
+        <section id="yoga-box"> </section>
+        <button id="index" class="signed-in"> View all
         </button>  
       </section>
 
-      <!-- SHOW Yoga -->
-      <section id="SHOW">
-        <form id="yoga-show">
-          <input name="yoga[id]" type="text" class="crud" placeholder="search by id"> Reflect on a specific yoga memory.
-          </form>
-      </section>
-
       <!-- DELETE YOGAS -->
-    <section id="DELETE">
+    <section id="DELETE" class="signed-in">
       <form id="yoga-destroy">
-        <input type="submit"> Destroy what does not serve you, and move on.</form>
+        <input name="id" placeholder="id" type="text" class="signed-in"/>
+        <input type="submit" value="destroy and move on">
+      </form>
       </section>
 
       <!-- Site Footer -->

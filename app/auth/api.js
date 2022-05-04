@@ -57,7 +57,7 @@ const yogaCreate = function (formData) {
 const yogaDestroy = function (id) {
     return $.ajax({
         method: 'DELETE',
-        url: config.apiUrl + '/yogas' + id,
+        url: config.apiUrl + '/yogas/' + id,
         headers: {
             Authorization: 'Bearer ' + store.user.token
         }

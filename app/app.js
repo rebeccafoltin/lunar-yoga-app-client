@@ -16,4 +16,5 @@ $(() => {
     $('#yoga-index').on('click', Events.onYogaIndex)
     $('#yoga-show').on('click', Events.onYogaShow)
     $('#yoga-update').on('submit', Events.onYogaUpdate)
+    $('.signed-in').hide()
   })

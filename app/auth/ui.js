@@ -7,14 +7,13 @@
 
 const store = require('../store.js')
 
-//<!---USER AUTHENTICATION---->
+// USER AUTHENTICATION
 
 //<!---SIGN UP---->
 
 const onSignUpSuccess = function () {
     $('#auth-display').html('<p>User signed up successfully</p>')
     $('form').trigger('reset')
-    $('.signed-in').hide();
 }
 
 const onSignUpFailure = function () {
@@ -25,9 +24,9 @@ const onSignUpFailure = function () {
 
 const onSignInSuccess = function (response) {
     $('#auth-display').html('<p>User signed in successfully</p>')
+    $('.signed-in').show()
+    $('.not-signed-in').hide()
     $('form').trigger('reset')
-    $(".signed-in").hide();
-    // store data from the response in my store object
     store.user = response.user
 }
 
@@ -40,7 +39,6 @@ const onSignInFailure = function () {
 const onChangePasswordSuccess = function () {
     $('#auth-display').html('<p>User changed password successfully</p>')
     $('form').trigger('reset')
-    $('.not-signed-in').hide()
 }
 
 const onChangePasswordFailure = function () {
@@ -53,7 +51,8 @@ const onSignOutSuccess = function () {
     $('#auth-display').html('<p>User signed out successfully</p>')
     store.user = null
     $('form').trigger('reset')
-    $('.not-signed-in').hide()
+    $('.not-signed-in').show()
+    $('.signed-in').hide()
 }
 
 const onSignOutFailure = function () {
@@ -83,16 +82,16 @@ const onYogaCreateFailure = function (response) {
     // store data from the response in my store object
 }
 
-//<!---INDEX------>
+//<!---INDEX ALL RESOURCES ------>
 
 const yogaHTML = function (yoga) {
     return (`
-    <div>
+    <div class="yogaUIfunction">
         <p>ID:${yoga._id}</p> 
-        <p> NAME: ${yoga.yogaName} </p>
-        <p> NAME: ${yoga.yogaStyle} </p>
-        <p> NAME: ${yoga.yogaEmotion} </p>
-        <p> NAME: ${yoga.yogaDate} </p>
+        <p> Name: ${yoga.yogaName} </p>
+        <p> Style: ${yoga.yogaStyle} </p>
+        <p> Emotion: ${yoga.yogaEmotion} </p>
+        <p> Date: ${yoga.yogaDate} </p>
         </div>
     `)
 }
@@ -136,12 +135,9 @@ const onYogaShowFailure = function (response) {
 
 }
 
-//<!---UPDATE---->
+//<!---UPDATE RESOURCES ---->
 
-const onYogaUpdateSuccess = function (response) {
-    const yoga = response.yoga
-    $(`#${yoga._id}`).html(yogaInfoHtml(yoga))
-    $('#alert-message').text(`Yoga updated ${yoga.yogaName}!`)
+const onYogaUpdateSuccess = function () {
     $('#auth-display').html('<p> Yoga updated successfully</p>')
     $('form').trigger('reset')
 
@@ -152,9 +148,9 @@ const onYogaUpdateFailure = function (response) {
     $('form').trigger('reset')
 }
 
-//<!---DESTROY---->
+//<!---DESTROY RESOURCES ---->
 
-const onYogaDestroySuccess = function (yogaName) {
+const onYogaDestroySuccess = function () {
 
     $('#auth-display').html('<p> Yoga destroyed successfully</p>')
     $('form').trigger('reset')
