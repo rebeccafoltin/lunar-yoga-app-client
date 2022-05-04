@@ -13,39 +13,50 @@
     </head>
     <body>
 
+      <!-- Site Header-->
       <h1>Lunar Yoga </h1>
       <h2> Breathe Deep and set your Intention.</h2>
 
+
+  <!-- Sign Up -->
       <h3 id="sign-up-header">Sign Up</h3>
-      <form id="sign-up-form">
-        <input name="credentials[email]" type="email" placeholder="Email">
-        <input name="credentials[password]" type="password" placeholder="Password">
-        <input name="credentials[firstname]" type="text" placeholder="First Name">
-        <input name="credentials[lastname]" type="text" placeholder="Last Name">
-        <input name="credentials[password_confirmation]" type="password" placeholder="Password Confirmation">
-        <button type="submit">Sign Up</button>
-      </form>
+      <section class="not-signed-in"></section>
+        <form id="sign-up-form">
+          <input name="credentials[email]" type="email" placeholder="Email">
+          <input name="credentials[password]" type="password" placeholder="Password">
+          <input name="credentials[firstname]" type="text" placeholder="First Name">
+          <input name="credentials[lastname]" type="text" placeholder="Last Name">
+          <input name="credentials[password_confirmation]" type="password" placeholder="Password Confirmation">
+          <button type="submit">Sign Up</button>
+        </form>
 
+  <!-- Sign In -->
       <h3 id="sign-in-header">Sign In</h3>
-      <form id="sign-in-form">
-        <input name="credentials[email]" type="email" placeholder="Email">
-        <input name="credentials[password]" type="password" placeholder="Password">
-        <button type="submit">Sign In</button>
-      </form>
+      <section class="not-signed-in"></section>
+        <form id="sign-in-form">
+          <input name="credentials[email]" type="email" placeholder="Email">
+          <input name="credentials[password]" type="password" placeholder="Password">
+          <button type="submit">Sign In</button>
+        </form>
 
+  <!-- Change Password -->
       <h3>Change Password</h3>
-      <form id="change-password-form">
-        <input name="passwords[old]" type="password" placeholder="old password">
-        <input name="passwords[new]" type="password" placeholder="new password">
-        <button type="submit">Change Password</button>
-      </form>
+      <section class="signed-in"></section>
+        <form id="change-password-form">
+          <input name="passwords[old]" type="password" placeholder="old password">
+          <input name="passwords[new]" type="password" placeholder="new password">
+          <button type="submit">Change Password</button>
+        </form>
 
+  <!-- Sign Out -->
       <h3>Sign Out</h3>
+      <section class="signed-in"></section>
       <button id="sign-out-button">Sign Out</button>
 
-      <section id="auth-display"></section>
+  <!-- C R U D  T I M E -->
 
-        <form id="yoga-create" class="border">
+  <!--CREATE Yogas -->
+        <form id="yoga-create" class="crud">
         <fieldset>
           <legend>Log your Yoga</legend>
           <input type="text" name="yoga[yogaStyle]" placeholder="Yoga Style">
@@ -56,20 +67,27 @@
         </fieldset>
       </form>
 
-      <!--INDEX YOGAS-->
+  <!--UPDATE Yogas-->
+          <form id="yoga-update" class="crud">
+            <fieldset>
+              <legend> Update Yoga</legend>
+              <input type="text" name="yoga[yogaStyle]" placeholder="Yoga Style">
+              <input type="text" name="yoga[yogaDate]" placeholder="Yoga Date">
+              <input type="text" name="yoga[yogaEmotion]" placeholder="Today's Emotions">
+              <input type="text" name="yoga[yogaName]" placeholder="Today's Practice">
+              <input type="text" name="yoga[_id]" placeholder="ID">
+              <input type="submit" value="submit to update">
+              </fieldset>
+            </form>
+      
+      <!--INDEX Yogas-->
       <section id="yoga-index">
-        <button id="index" class="border"> View all
+        <section id="yoga-box"></section>
+        <button id="index" class="crud"> View all
         </button>  
       </section>
 
-      <!-- UPDATE YOGAS -->
-      <section id="UPDATE">
-        <form id="yoga-update">
-          <button id="update" class="crud"> Update Yogas
-        </button>  
-      </section>
-
-      <!-- FIND YOGAS BY ID -->
+      <!-- SHOW Yoga -->
       <section id="SHOW">
         <form id="yoga-show">
           <input name="yoga[id]" type="text" class="crud" placeholder="search by id"> Reflect on a specific yoga memory.
@@ -78,10 +96,16 @@
 
       <!-- DELETE YOGAS -->
     <section id="DELETE">
-      <form id="yoga-destroy"> 
+      <form id="yoga-destroy">
         <input type="submit"> Destroy what does not serve you, and move on.</form>
       </section>
 
+      <!-- Site Footer -->
+      <footer class="footer">
+        <p> We Love Lunar Yoga </p>
+      </footer>
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     </body>
 </html>
 

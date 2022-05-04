@@ -19,7 +19,6 @@ const onSignUp = function (event) {
         .signUp(data)
         .then(() => authUi.onSignUpSuccess())
         .catch(() => authUi.onSignUpFailure())
-    console.log(authApi.signUp)
 }
 
 const onSignIn = function (event) {
@@ -87,18 +86,17 @@ const onYogaShow = function (event) {
         .yogaShow(data)
         .then(() => authUi.onYogaShowSuccess())
         .catch(() => authUi.onYogaShowFailure())
-    console.log(authApi.yogaShow)
 }
 
 const onYogaUpdate = function (event) {
     event.preventDefault()
     const form = event.target
     const data = getFormFields(form)
+    const id = data.yoga._id
     authApi
-        .yogaUpdate(data)
+        .yogaUpdate(id, data)
         .then(() => authUi.onYogaUpdateSuccess())
         .catch(() => authUi.onYogaUpdateFailure())
-    console.log(authApi.yogaUpdate)
 }
 
 

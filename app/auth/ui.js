@@ -7,27 +7,26 @@
 
 const store = require('../store.js')
 
-// SIGN UP
+//<!---USER AUTHENTICATION---->
+
+//<!---SIGN UP---->
 
 const onSignUpSuccess = function () {
     $('#auth-display').html('<p>User signed up successfully</p>')
-
     $('form').trigger('reset')
+    $('.signed-in').hide();
 }
 
 const onSignUpFailure = function () {
     $('#auth-display').html('<p>Error while signing up</p>')
 }
 
-// SIGN IN
+//<!---SIGN IN---->
 
 const onSignInSuccess = function (response) {
     $('#auth-display').html('<p>User signed in successfully</p>')
-
-    // reset all forms
     $('form').trigger('reset')
-
-    console.log(response)
+    $(".signed-in").hide();
     // store data from the response in my store object
     store.user = response.user
 }
@@ -36,33 +35,35 @@ const onSignInFailure = function () {
     $('#auth-display').html('<p>Error while signing in</p>')
 }
 
-// CHANGE PASSWORD
+//<!---CHANGE PASSWORD---->
 
 const onChangePasswordSuccess = function () {
     $('#auth-display').html('<p>User changed password successfully</p>')
-
     $('form').trigger('reset')
+    $('.not-signed-in').hide()
 }
 
 const onChangePasswordFailure = function () {
     $('#auth-display').html('<p>Error while changing password</p>')
 }
 
-// SIGN OUT
+//<!---SIGN OUT---->
 
 const onSignOutSuccess = function () {
     $('#auth-display').html('<p>User signed out successfully</p>')
-    
     store.user = null
-
     $('form').trigger('reset')
+    $('.not-signed-in').hide()
 }
 
 const onSignOutFailure = function () {
     $('#auth-display').html('<p>Error while signing out</p>')
 }
 
-// CREATE
+
+// C R U D USER RESOURCES
+
+//<!---CREATE---->
 
 const onYogaCreateSuccess = function (response) {
     $('#auth-display').html('<p>Yoga created sucessfully</p>')
@@ -70,7 +71,6 @@ const onYogaCreateSuccess = function (response) {
     // reset all forms
     $('form').trigger('reset')
 
-    console.log(response)
     // store data from the response in my store object
 }
 
@@ -80,25 +80,10 @@ const onYogaCreateFailure = function (response) {
     // reset all forms
     $('form').trigger('reset')
 
-    console.log(response)
     // store data from the response in my store object
 }
 
-// DESTROY
-
-const onYogaDestroySuccess = function (response) {
-    $('#auth-display').html('<p> Yoga destroyed successfully</p>')
-    $('form').trigger('reset')
-
-}
-
-const onYogaDestroyFailure = function (response) {
-    $('#auth-display').html('<p> Yoga destroy Failure </p>')
-
-}
-
-
-// INDEX
+//<!---INDEX------>
 
 const yogaHTML = function (yoga) {
     return (`
@@ -124,7 +109,6 @@ const onYogaIndexSuccess = function (response) {
     // reset all forms
     $('form').trigger('reset')
 
-    console.log(response)
     // store data from the response in my store object
 }
 
@@ -134,62 +118,56 @@ const onYogaIndexFailure = function (response) {
     // reset all forms
     $('form').trigger('reset')
 
-    console.log(response)
     // store data from the response in my store object
 }
 
-// SHOW
+//<!---SHOW ONE RESOURCE---->
 
 const onYogaShowSuccess = function (response) {
-    $('#auth-display').html('<p> Yoga shown successfully</p>')
-
-    // reset all forms
+    const yogas = response.yogas
+    $('#auth-display').html(yogaInfoHtml(yoga))
     $('form').trigger('reset')
 
-    console.log(response)
-    // store data from the response in my store object
 }
 
 const onYogaShowFailure = function (response) {
-    $('#auth-display').html('<p> Yoga updated successfully</p>')
-
-    // reset all forms
+    $('#auth-display').html('<p> Yoga show failure </p>')
     $('form').trigger('reset')
 
-    console.log(response)
-    // store data from the response in my store object
 }
 
-// UPDATE
+//<!---UPDATE---->
 
 const onYogaUpdateSuccess = function (response) {
+    const yoga = response.yoga
+    $(`#${yoga._id}`).html(yogaInfoHtml(yoga))
+    $('#alert-message').text(`Yoga updated ${yoga.yogaName}!`)
     $('#auth-display').html('<p> Yoga updated successfully</p>')
-
-    // reset all forms
     $('form').trigger('reset')
 
-    console.log(response)
-    // store data from the response in my store object
 }
 
 const onYogaUpdateFailure = function (response) {
     $('#auth-display').html('<p> Yoga updated successfully</p>')
+    $('form').trigger('reset')
+}
 
-    // reset all forms
+//<!---DESTROY---->
+
+const onYogaDestroySuccess = function (yogaName) {
+
+    $('#auth-display').html('<p> Yoga destroyed successfully</p>')
     $('form').trigger('reset')
 
-    console.log(response)
-    // store data from the response in my store object
+}
+
+const onYogaDestroyFailure = function (response) {
+    $('#auth-display').html('<p> Yoga destroy Failure </p>')
+
 }
 
 
-
-
-
-
-
-
-
+//<!-- MODULE EXPORTS--->
 
 module.exports = {
     onSignUpSuccess,

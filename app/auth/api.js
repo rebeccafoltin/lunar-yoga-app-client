@@ -6,7 +6,6 @@ const store = require('../store.js')
 const config = require('../config.js')
 
 const signUp = function (data) {
-    console.log(store)
     return $.ajax({
         method: 'POST',
         url: config.apiUrl + '/sign-up',
@@ -85,13 +84,14 @@ const yogaShow = function() {
     })
 }
 
-const yogaUpdate = function() {
+const yogaUpdate = function(id, data) {
     return $.ajax({
         method: 'PATCH',
-        url: config.apiUrl + '/yogas',
+        url: config.apiUrl + '/yogas/' + id,
         headers: {
             Authorization: 'Bearer ' + store.user.token
-        }
+        },
+        data
     })
 }
 

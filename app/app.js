@@ -5,7 +5,6 @@
 // app.js requires events.js
 const Events = require('./auth/events.js')
 
-
 $(() => {
     // register event handler functions
     $('#sign-up-form').on('submit', Events.onSignUp)
@@ -16,5 +15,5 @@ $(() => {
     $('#yoga-destroy').on('submit', Events.onYogaDestroy)
     $('#yoga-index').on('click', Events.onYogaIndex)
     $('#yoga-show').on('click', Events.onYogaShow)
-    $('#yoga-update').on('click', Events.onYogaUpdate)
-})
+    $('#yoga-update').on('submit', Events.onYogaUpdate)
+  })
